@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photo Contribution Form - XXXVI Planetary Congress</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
+    .container { max-width: 800px; margin: 20px auto; background: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1, h2, h3 { color: #333; }
+    label { display: block; margin-top: 10px; font-weight: bold; }
+    input, textarea { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+    fieldset { border: 1px solid #ddd; padding: 15px; margin-top: 20px; }
+    .submit-btn { background: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Photo Contribution Form - XXXVI Planetary Congress</h1>
+    <p>
+      Dear Space Traveler,<br>
+      We are thrilled to welcome you as a key part of the historic XXXVI Planetary Congress taking place for the first time in Brazil in 2025.
+      Please share up to five of your most meaningful space images along with captions and, optionally, a piece of music.
+    </p>
+    <p><strong>Deadline:</strong> Please submit your photos by March 31st, 2025.</p>
+    <p>Thank you for being part of this unforgettable journey!<br>Marcos Pontes</p>
+    
+    <form id="uploadForm" method="post" action="/upload" enctype="multipart/form-data">
+      <!-- Personal Information -->
+      <h2>Personal Information</h2>
+      <label for="fullName">Full Name *</label>
+      <input type="text" id="fullName" name="fullName" required>
+      
+      <label for="nationality">Nationality *</label>
+      <input type="text" id="nationality" name="nationality" required>
+      
+      <label for="contactEmail">Contact Email *</label>
+      <input type="email" id="contactEmail" name="contactEmail" required>
+      
+      <label for="phoneNumber">Phone Number (Including Country Code) *</label>
+      <input type="text" id="phoneNumber" name="phoneNumber" required>
+      
+      <label>WhatsApp Availability *</label>
+      <input type="radio" id="whatsappYes" name="whatsapp" value="Yes" required>
+      <label for="whatsappYes" style="display:inline;">Yes</label>
+      <input type="radio" id="whatsappNo" name="whatsapp" value="No" required>
+      <label for="whatsappNo" style="display:inline;">No</label>
+      
+      <label for="currentOccupation">Current Occupation</label>
+      <input type="text" id="currentOccupation" name="currentOccupation">
+      
+      <!-- Photo Upload Section -->
+      <h2>Photo Upload and Details</h2>
+      
+      <!-- Photo 1 -->
+      <fieldset>
+        <legend>Photo 1: Earth From Space *</legend>
+        <label for="photo1">Upload Photo 1 (Max file size: 100MB)</label>
+        <input type="file" id="photo1" name="photo1" accept=".jpg,.jpeg,.png" required>
+        <label for="photo1Caption">Caption for Photo 1 *</label>
+        <input type="text" id="photo1Caption" name="photo1Caption" required>
+        <label for="photo1Music">Music for Photo 1 *</label>
+        <input type="text" id="photo1Music" name="photo1Music" required>
+      </fieldset>
+      
+      <!-- Photo 2 -->
+      <fieldset>
+        <legend>Photo 2: You inside the spaceship</legend>
+        <label for="photo2">Upload Photo 2 (Max file size: 100MB)</label>
+        <input type="file" id="photo2" name="photo2" accept=".jpg,.jpeg,.png">
+        <label for="photo2Caption">Caption for Photo 2</label>
+        <input type="text" id="photo2Caption" name="photo2Caption">
+        <label for="photo2Music">Music for Photo 2</label>
+        <input type="text" id="photo2Music" name="photo2Music">
+      </fieldset>
+      
+      <!-- Photo 3 -->
+      <fieldset>
+        <legend>Photo 3: EVA or Other Systems Activity</legend>
+        <label for="photo3">Upload Photo 3 (Max file size: 100MB)</label>
+        <input type="file" id="photo3" name="photo3" accept=".jpg,.jpeg,.png">
+        <label for="photo3Caption">Caption for Photo 3</label>
+        <input type="text" id="photo3Caption" name="photo3Caption">
+        <label for="photo3Music">Music for Photo 3</label>
+        <input type="text" id="photo3Music" name="photo3Music">
+      </fieldset>
+      
+      <!-- Photo 4 -->
+      <fieldset>
+        <legend>Photo 4: Scientific Activity</legend>
+        <label for="photo4">Upload Photo 4 (Max file size: 100MB)</label>
+        <input type="file" id="photo4" name="photo4" accept=".jpg,.jpeg,.png">
+        <label for="photo4Caption">Caption for Photo 4</label>
+        <input type="text" id="photo4Caption" name="photo4Caption">
+        <label for="photo4Music">Music for Photo 4</label>
+        <input type="text" id="photo4Music" name="photo4Music">
+      </fieldset>
+      
+      <!-- Photo 5 -->
+      <fieldset>
+        <legend>Photo 5: Your Choice!</legend>
+        <label for="photo5">Upload Photo 5 (Max file size: 100MB)</label>
+        <input type="file" id="photo5" name="photo5" accept=".jpg,.jpeg,.png">
+        <label for="photo5Caption">Caption for Photo 5</label>
+        <input type="text" id="photo5Caption" name="photo5Caption">
+        <label for="photo5Music">Music for Photo 5</label>
+        <input type="text" id="photo5Music" name="photo5Music">
+      </fieldset>
+      
+      <!-- Audio Upload Section -->
+      <h2>Audio Upload and Details</h2>
+      
+      <!-- Audio 1 -->
+      <fieldset>
+        <legend>Audio 1</legend>
+        <label for="audioFile1">Upload Audio File 1 (Max file size: 100MB)</label>
+        <input type="file" id="audioFile1" name="audioFile1" accept=".mp3,.wav">
+        <label for="composer1">Composer/Artist for Audio 1</label>
+        <input type="text" id="composer1" name="composer1">
+        <label for="musicLink1">Music Link for Audio 1</label>
+        <input type="url" id="musicLink1" name="musicLink1">
+      </fieldset>
+      
+      <!-- Audio 2 -->
+      <fieldset>
+        <legend>Audio 2</legend>
+        <label for="audioFile2">Upload Audio File 2 (Max file size: 100MB)</label>
+        <input type="file" id="audioFile2" name="audioFile2" accept=".mp3,.wav">
+        <label for="composer2">Composer/Artist for Audio 2</label>
+        <input type="text" id="composer2" name="composer2">
+        <label for="musicLink2">Music Link for Audio 2</label>
+        <input type="url" id="musicLink2" name="musicLink2">
+      </fieldset>
+      
+      <!-- Audio 3 -->
+      <fieldset>
+        <legend>Audio 3</legend>
+        <label for="audioFile3">Upload Audio File 3 (Max file size: 100MB)</label>
+        <input type="file" id="audioFile3" name="audioFile3" accept=".mp3,.wav">
+        <label for="composer3">Composer/Artist for Audio 3</label>
+        <input type="text" id="composer3" name="composer3">
+        <label for="musicLink3">Music Link for Audio 3</label>
+        <input type="url" id="musicLink3" name="musicLink3">
+      </fieldset>
+      
+      <!-- Audio 4 -->
+      <fieldset>
+        <legend>Audio 4</legend>
+        <label for="audioFile4">Upload Audio File 4 (Max file size: 100MB)</label>
+        <input type="file" id="audioFile4" name="audioFile4" accept=".mp3,.wav">
+        <label for="composer4">Composer/Artist for Audio 4</label>
+        <input type="text" id="composer4" name="composer4">
+        <label for="musicLink4">Music Link for Audio 4</label>
+        <input type="url" id="musicLink4" name="musicLink4">
+      </fieldset>
+      
+      <!-- Audio 5 -->
+      <fieldset>
+        <legend>Audio 5</legend>
+        <label for="audioFile5">Upload Audio File 5 (Max file size: 100MB)</label>
+        <input type="file" id="audioFile5" name="audioFile5" accept=".mp3,.wav">
+        <label for="composer5">Composer/Artist for Audio 5</label>
+        <input type="text" id="composer5" name="composer5">
+        <label for="musicLink5">Music Link for Audio 5</label>
+        <input type="url" id="musicLink5" name="musicLink5">
+      </fieldset>
+      
+      <!-- Terms and Conditions -->
+      <h2>Terms and Conditions *</h2>
+      <fieldset>
+        <legend>Terms and Conditions</legend>
+        <div class="terms">
+          <p>[Insira os termos e condições aqui.]</p>
+        </div>
+        <label for="privacyPolicy">
+          <input type="checkbox" id="privacyPolicy" name="privacyPolicy" value="accepted" required>
+          I agree and consent to the terms outlined above.
+        </label>
+      </fieldset>
+      
+      <!-- Feedback -->
+      <h2>Feedback and Suggestions</h2>
+      <textarea id="feedback" name="feedback" rows="4"></textarea>
+      
+      <br>
+      <input type="submit" value="Submit" class="submit-btn">
+    </form>
+    
+    <div id="loading">Uploading... Please wait.</div>
+  </div>
+</body>
+</html>
