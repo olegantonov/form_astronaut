@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 // Configure o Cloud Storage
 const storageClient = new Storage();
-const bucketName = 'YOUR_BUCKET_NAME';  // Substitua pelo nome do seu bucket
+const bucketName = 'formsastronauts-uploads';
 
 // Configure o multer para armazenar arquivos na memória
 const upload = multer({ storage: multer.memoryStorage() });
